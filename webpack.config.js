@@ -12,7 +12,8 @@ module.exports = {
   entry: [
     'whatwg-fetch',
     'babel-polyfill',
-    path.join(paths.JS, 'app.js')
+    'semantic-ui-react',
+    path.join(paths.JS, 'app.js'),
   ],
   output: {
     path: paths.DIST,
@@ -36,7 +37,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'babel-loader',
-        ]
+        ],
       },
       // CSS loader to CSS files
       // Files will get handled by css loader and then passed to the extract text plugin
