@@ -13,7 +13,7 @@ module.exports = {
     'whatwg-fetch',
     'babel-polyfill',
     'semantic-ui-react',
-    path.join(paths.JS, 'app.js'),
+    path.join(paths.JS, 'app.jsx'),
   ],
   output: {
     path: paths.DIST,
