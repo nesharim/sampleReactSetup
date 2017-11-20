@@ -37,8 +37,20 @@ class GithubReposContainer extends Component {
     }
   }
 
+  filterTerm = (term) => {
+    const updatedRepoList = this.props.repos.filter(repo => repo.toLowerCase().search(term.toLowerCase()) !== -1);
+    console.log(updatedRepoList);
+    this.props.dispatch(RepoActions.updateRepoList(updatedRepoList));
+  }
+
   render() {
-    return <GithubRepos repos={this.props.repos} getReposList={user => this.fetchReposInfoForUser(user)} />;
+    return (
+      <GithubRepos
+        repos={this.props.repos}
+        getReposList={user => this.fetchReposInfoForUser(user)}
+        filterForSearchTerm={term => this.filterTerm(term)}
+      />
+    );
   }
 }
 

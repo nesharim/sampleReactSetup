@@ -5,8 +5,9 @@ import { Grid, Button, Input, Segment } from 'semantic-ui-react';
 
 class GithubRepos extends PureComponent {
   static propTypes = {
-    getReposList: PropTypes.func.isRequired,
     repos: PropTypes.arrayOf(PropTypes.string.isRequired),
+    getReposList: PropTypes.func.isRequired,
+    filterForSearchTerm: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
@@ -15,7 +16,6 @@ class GithubRepos extends PureComponent {
 
   state = {
     name: '',
-    searchKey: '',
   }
 
   renderRepoList = () => (
@@ -42,7 +42,7 @@ class GithubRepos extends PureComponent {
                 type="text"
                 placeholder="Enter keywords to filter. Eg.:algo"
                 value={this.state.searchKey}
-                onChange={e => this.setState({ searchKey: e.target.value })}
+                onChange={e => this.props.filterForSearchTerm(e.target.value)}
               />
               <Button onClick={() => this.setState({ searchKey: '' })}>Clear</Button>
             </Grid.Column>
