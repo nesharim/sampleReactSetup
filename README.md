@@ -8,6 +8,5 @@ After cloning the porject to your local,
 3. yarn run dev // To start the server on port 8080
 
 TODO:
-1. Add CSS
-2. Make the overall feel of the page better to look at.
-3. Add search capibility for the repo names.
+1. Improve the look and feel of the page.
+2. Add Proper validations.
